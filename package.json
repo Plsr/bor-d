@@ -1,0 +1,23 @@
+{
+  "name": "bord",
+  "version": "0.0.0",
+  "description": "bord",
+  "author": "plsr",
+  "main": "cluster.js",
+  "engines": {
+    "node": "6.0.0"
+  },
+  "dependencies": {
+    "nodal": "0.14.0-rc3"
+  },
+  "devDependencies": {
+    "chai": "~3.5.0",
+    "mocha": "~2.4.5"
+  },
+  "scripts": {
+    "test": "mocha ./test/runner.js",
+    "start": "node cluster.js",
+    "worker": "node worker.js"
+  },
+  "private": true
+}
