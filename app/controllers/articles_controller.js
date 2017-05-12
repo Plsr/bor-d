@@ -29,8 +29,6 @@ class ArticlesController extends Nodal.Controller {
 
   create() {
 
-    console.log(this.params.body.tags);
-
     Article.create(this.params.body, (err, model) => {
 
       this.respond(err || model);
