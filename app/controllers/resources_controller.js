@@ -1,13 +1,13 @@
 'use strict';
 
 const Nodal = require('nodal');
-const Article = Nodal.require('app/models/article.js');
+const Resource = Nodal.require('app/models/resource.js');
 
-class ArticlesController extends Nodal.Controller {
+class ResourcesController extends Nodal.Controller {
 
   index() {
 
-    Article.query()
+    Resource.query()
       .where(this.params.query)
       .end((err, models) => {
 
@@ -19,7 +19,7 @@ class ArticlesController extends Nodal.Controller {
 
   show() {
 
-    Article.find(this.params.route.id, (err, model) => {
+    Resource.find(this.params.route.id, (err, model) => {
 
       this.respond(err || model);
 
@@ -29,7 +29,7 @@ class ArticlesController extends Nodal.Controller {
 
   create() {
 
-    Article.create(this.params.body, (err, model) => {
+    Resource.create(this.params.body, (err, model) => {
 
       this.respond(err || model);
 
@@ -39,7 +39,7 @@ class ArticlesController extends Nodal.Controller {
 
   update() {
 
-    Article.update(this.params.route.id, this.params.body, (err, model) => {
+    Resource.update(this.params.route.id, this.params.body, (err, model) => {
 
       this.respond(err || model);
 
@@ -49,7 +49,7 @@ class ArticlesController extends Nodal.Controller {
 
   destroy() {
 
-    Article.destroy(this.params.route.id, (err, model) => {
+    Resource.destroy(this.params.route.id, (err, model) => {
 
       this.respond(err || model);
 
@@ -59,4 +59,4 @@ class ArticlesController extends Nodal.Controller {
 
 }
 
-module.exports = ArticlesController;
+module.exports = ResourcesController;

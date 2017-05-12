@@ -1,22 +1,23 @@
 {
 
-  "migration_id": 2017051218563963,
+  "migration_id": 2017051220175007,
 
   "models": {
 
-    "Article": {
+    "Resource": {
 
-      "table": "articles",
+      "table": "resources",
 
       "columns": [
         {"name": "id", "type": "serial", "properties": {"nullable":false,"primary_key":true,"auto_increment":true}},
         {"name": "url", "type": "string", "properties": {}},
         {"name": "name", "type": "string", "properties": {}},
         {"name": "description", "type": "string", "properties": {}},
+        {"name": "field", "type": "string", "properties": {}},
+        {"name": "type", "type": "string", "properties": {}},
         {"name": "created_at", "type": "datetime", "properties": {}},
         {"name": "updated_at", "type": "datetime", "properties": {}},
-        {"name": "tags", "type": "string", "properties": {"array":true}},
-        {"name": "field", "type": "string", "properties": {}}
+        {"name": "tags", "type": "string", "properties": {"array":true}}
       ]
 
     }
