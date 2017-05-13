@@ -30,8 +30,6 @@ const PERMITTED_TAGS = [
 var validateTags = function(tagsArray) {
   var errors = false
   tagsArray.map(function(tag) {
-    console.log("Current Tag: " + tag);
-    console.log(PERMITTED_TAGS.indexOf(tag));
     if(PERMITTED_TAGS.indexOf(tag) === -1)
       errors = true
   })
