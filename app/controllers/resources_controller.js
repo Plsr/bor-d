@@ -1,7 +1,10 @@
 'use strict';
 
 const Nodal = require('nodal');
+const nunjucks = require('nunjucks');
 const Resource = Nodal.require('app/models/resource.js');
+
+nunjucks.configure('views', { autoescape: true });
 
 class ResourcesController extends Nodal.Controller {
 
@@ -10,8 +13,8 @@ class ResourcesController extends Nodal.Controller {
     Resource.query()
       .where(this.params.query)
       .end((err, models) => {
-
-        this.respond(err || models);
+        console.log(models[0]._data);
+        this.render(nunjucks.render('resources.html', { resources: models }));
 
       });
 
