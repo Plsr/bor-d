@@ -30,15 +30,18 @@ router.renderware.use(GzipRenderware);
 const IndexController = Nodal.require('app/controllers/index_controller.js');
 const ResourcesController = Nodal.require('app/controllers/resources_controller.js');
 const RandomController = Nodal.require('app/controllers/random_controller.js');
+const AddResourceController = Nodal.require('app/controllers/add_resource_controller.js');
 
 /* generator: end imports */
 
 router.route('/').use(IndexController);
+router.route('/add').use(AddResourceController);
 
 /* generator: begin routes */
 
 router.route('/resources/{id}').use(ResourcesController);
 router.route('/random').use(RandomController);
+router.route('/add_resource/{id}').use(AddResourceController);
 
 /* generator: end routes */
 
